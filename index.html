@@ -1,754 +1,131 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhiram D Ajeesh | Creative Visual & Cultural Artist</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        terracotta: {
-                            50: '#fdf8f6',
-                            100: '#f2e8e5',
-                            500: '#c85a32',
-                            600: '#b0431d',
-                            700: '#933516',
-                            900: '#4a1707',
-                        },
-                        ochre: {
-                            400: '#e5ad35',
-                            500: '#d99b26',
-                            600: '#b87c17',
-                        },
-                        peacock: {
-                            700: '#0d5c63',
-                            800: '#084147',
-                            900: '#04272b'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                        cinzel: ['"Cinzel"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        body {
-            background-color: #0c0a09;
-            color: #f5f5f4;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8f5ef" />
+  <meta name="description" content="The art portfolio of Abhiram — drawings, paintings, and creative work." />
+  <title>Abhiram — Art & Painting</title>
+  <style>
+    :root {
+      --paper: #f8f5ef;
+      --ink: #24231f;
+      --muted: #77736b;
+      --accent: #a75c3b;
+      --line: #e5dfd5;
+      --card: #fffdf9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 24px 0; border-bottom: 1px solid var(--line); }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font-size: 1.1rem; font-weight: 800; letter-spacing: -.04em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { padding: 86px 0 72px; display: block; max-width: 780px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .75rem; font-weight: 750; color: var(--accent); }
+    h1 { font-size: clamp(3rem, 7vw, 5.6rem); line-height: .98; letter-spacing: -.075em; margin: 16px 0 22px; }
+    h1 em { font-family: Georgia, serif; font-weight: 400; }
+    .intro { max-width: 480px; color: var(--muted); font-size: 1.08rem; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button { display: inline-block; border: 1px solid var(--ink); border-radius: 999px; padding: 11px 19px; font-size: .9rem; font-weight: 650; transition: .2s ease; }
+    .button.primary { background: var(--ink); color: white; }
+    .button:hover { transform: translateY(-2px); }
 
-        .cultural-pattern {
-            background-color: #0c0a09;
-            background-image: radial-gradient(#d99b26 0.75px, transparent 0.75px), radial-gradient(#c85a32 0.75px, #0c0a09 0.75px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
-            opacity: 0.95;
-        }
-
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #fef08a 0%, #d99b26 50%, #b87c17 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: rgba(28, 25, 23, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(217, 155, 38, 0.15);
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0c0a09;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #44403c;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c85a32;
-        }
-
-        .canvas-bg {
-            background: radial-gradient(circle at center, rgba(13, 92, 99, 0.15) 0%, rgba(12, 10, 9, 0.95) 70%);
-        }
-    </style>
+    section { padding: 66px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 28px; }
+    h2 { margin: 8px 0 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -.055em; }
+    .section-note { color: var(--muted); max-width: 340px; font-size: .95rem; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .art-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .art-number { color: var(--accent); font-size: .78rem; letter-spacing: .14em; font-weight: 750; }
+    .art-info h3 { margin: 12px 0 0; font-size: 1.08rem; }
+    .art-info p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
+    .about { display: block; max-width: 780px; border-top: 1px solid var(--line); }
+    .about-copy { max-width: 650px; }
+    .about-copy p { color: var(--muted); margin-top: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; color: #5f5a52; font-size: .82rem; }
+    footer { padding: 25px 0; color: var(--muted); font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    @media (max-width: 760px) {
+      .hero { padding: 62px 0 48px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 460px) {
+      .wrap { width: min(100% - 28px, 1080px); }
+      .nav-links { gap: 12px; font-size: .82rem; }
+      .gallery { grid-template-columns: 1fr; }
+      h1 { font-size: 3.5rem; }
+    }
+  </style>
 </head>
-<body class="cultural-pattern text-stone-200 antialiased selection:bg-terracotta-500 selection:text-white">
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">ABHIRAM<span>.</span></a>
+      <div class="nav-links">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
 
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-stone-800/80" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#hero" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-full border-2 border-ochre-500 flex items-center justify-center bg-stone-900 group-hover:rotate-45 transition-transform duration-500">
-                    <span class="font-cinzel text-ochre-400 font-bold text-lg">A</span>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-serif font-bold text-lg sm:text-xl tracking-wider text-stone-100 group-hover:text-ochre-400 transition-colors">ABHIRAM D AJEESH</span>
-                    <span class="text-[10px] tracking-widest text-stone-400 uppercase font-cinzel">Visual & Cultural Artist</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#about" class="hover:text-ochre-400 transition-colors">HERITAGE & ABOUT</a>
-                <a href="#gallery" class="hover:text-ochre-400 transition-colors">GALLERY</a>
-                <a href="#art-styles" class="hover:text-ochre-400 transition-colors">STYLES</a>
-                <a href="#interactive-canvas" class="hover:text-ochre-400 transition-colors">LIVE CANVAS</a>
-                <a href="#contact" class="px-5 py-2.5 rounded-full border border-ochre-500/50 hover:border-ochre-400 text-ochre-400 hover:bg-ochre-500/10 transition-all">CONNECT</a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-ochre-400 focus:outline-none p-2" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Artist · Drawing · Painting</div>
+        <h1>Art that<br />speaks <em>quietly.</em></h1>
+        <p class="intro">Hi, I'm Abhiram. I turn ideas, feelings, and everyday moments into drawings and paintings. Welcome to my little corner of art.</p>
+        <div class="buttons">
+          <a class="button primary" href="#gallery">Explore my work ↗</a>
+          <a class="button" href="#about">A little about me</a>
         </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-stone-800 px-6 py-6 space-y-4">
-            <a href="#about" class="block text-stone-200 hover:text-ochre-400 font-medium tracking-wide mobile-link">HERITAGE & ABOUT</a>
-            <a href="#gallery" class="block text-stone-200 hover:text-ochre-400 font-medium tracking-wide mobile-link">GALLERY</a>
-            <a href="#art-styles" class="block text-stone-200 hover:text-ochre-400 font-medium tracking-wide mobile-link">STYLES</a>
-            <a href="#interactive-canvas" class="block text-stone-200 hover:text-ochre-400 font-medium tracking-wide mobile-link">LIVE CANVAS</a>
-            <a href="#contact" class="block text-center py-2.5 rounded-lg bg-terracotta-600 text-white font-medium hover:bg-terracotta-500 transition-colors mobile-link">CONNECT WITH ABHIRAM</a>
-        </div>
-    </header>
-
-    <section id="hero" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative overflow-hidden canvas-bg">
-        <div class="absolute top-20 left-10 w-32 h-32 border border-ochre-500/10 rounded-full animate-spin" style="animation-duration: 40s;"></div>
-        <div class="absolute bottom-10 right-10 w-64 h-64 border border-terracotta-500/10 rounded-full animate-spin" style="animation-duration: 60s;"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-stone-900/80 border border-ochre-500/30 text-ochre-400 text-xs font-semibold tracking-widest uppercase">
-                    <i class="fa-solid fa-paintbrush text-terracotta-500"></i>
-                    <span>Tradition Meets Fine Art</span>
-                </div>
-                
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-stone-100 leading-tight">
-                    Breathing Soul into <span class="gold-gradient-text italic">Cultural Canvas</span> & Charcoal
-                </h1>
-                
-                <p class="text-base sm:text-lg text-stone-400 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Welcome to the creative realm of <strong class="text-stone-200">Abhiram D Ajeesh</strong>. Merging ancient mythological motifs, rich murals, folk traditions, and realistic charcoal portraiture into captivating visual journeys.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                    <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-full bg-terracotta-600 hover:bg-terracotta-500 text-white font-medium shadow-lg shadow-terracotta-900/30 transition-all flex items-center justify-center space-x-2 group">
-                        <span>Explore Masterworks</span>
-                        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#interactive-canvas" class="w-full sm:w-auto px-8 py-4 rounded-full glass-card hover:bg-stone-800/80 text-stone-300 hover:text-ochre-400 border border-stone-700 font-medium transition-all flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-palette text-ochre-400"></i>
-                        <span>Try Interactive Board</span>
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-stone-800/80 text-center lg:text-left">
-                    <div>
-                        <span class="block text-2xl sm:text-3xl font-serif font-bold text-ochre-400">150+</span>
-                        <span class="text-xs text-stone-500 uppercase tracking-wider font-cinzel">Artworks Created</span>
-                    </div>
-                    <div>
-                        <span class="block text-2xl sm:text-3xl font-serif font-bold text-terracotta-500">12+</span>
-                        <span class="text-xs text-stone-500 uppercase tracking-wider font-cinzel">Exhibitions</span>
-                    </div>
-                    <div>
-                        <span class="block text-2xl sm:text-3xl font-serif font-bold text-ochre-400">100%</span>
-                        <span class="text-xs text-stone-500 uppercase tracking-wider font-cinzel">Handcrafted Passion</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Artist Feature Image (Sourced from Unsplash/Internet) -->
-            <div class="lg:col-span-5 relative">
-                <div class="relative mx-auto max-w-md lg:max-w-none">
-                    <div class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-ochre-500/30 via-terracotta-500/20 to-ochre-600/30 blur-lg"></div>
-                    
-                    <div class="relative rounded-2xl overflow-hidden border-2 border-ochre-500/40 bg-stone-900 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" 
-                             alt="Abhiram Artwork Feature" 
-                             class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700">
-                        
-                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent p-6">
-                            <span class="px-2.5 py-1 rounded bg-ochre-500/20 text-ochre-400 text-xs font-semibold uppercase tracking-wider">Featured Painting</span>
-                            <h3 class="text-xl font-serif font-bold text-stone-100 mt-2">The Eternal Temple Dancer</h3>
-                            <p class="text-xs text-stone-400 mt-1 italic">Acrylic & Earth Pigments on Canvas by Abhiram D Ajeesh</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="about" class="py-24 bg-stone-950 relative border-y border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs uppercase tracking-widest text-ochre-400 font-cinzel font-semibold">Rooted in Heritage</h2>
-                <p class="text-3xl sm:text-5xl font-serif font-bold text-stone-100">The Cultural Journey of Abhiram</p>
-                <div class="w-16 h-1 bg-terracotta-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="space-y-6 text-stone-300 font-light text-base leading-relaxed">
-                    <p class="first-letter:text-5xl first-letter:font-serif first-letter:text-terracotta-500 first-letter:mr-2 first-letter:float-left">
-                        Art for <strong class="text-stone-100 font-medium">Abhiram D Ajeesh</strong> is not merely a practice of form and color—it is an invocation of identity, myth, and emotional resonance. Deeply inspired by classical folklore, murals, tribal symbolism, and the intricate spirit of traditional arts, Abhiram weaves ancestral storytelling into contemporary visual art.
-                    </p>
-                    <p>
-                        Specializing in both detailed pencil/charcoal sketches and vibrant acrylic/oil paintings, his work reflects a meticulous mastery over light, texture, and rhythm. Each stroke celebrates the vibrant hues of earth ochre, vermilion, peacock blue, and gold leaf.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        <div class="glass-card p-4 rounded-xl border-l-4 border-l-ochre-500">
-                            <h4 class="font-serif font-bold text-stone-100 flex items-center gap-2">
-                                <i class="fa-solid fa-scroll text-ochre-400"></i> Folklore & Mythology
-                            </h4>
-                            <p class="text-xs text-stone-400 mt-1">Reinterpreting classical legends with expressive modern strokes.</p>
-                        </div>
-                        <div class="glass-card p-4 rounded-xl border-l-4 border-l-terracotta-500">
-                            <h4 class="font-serif font-bold text-stone-100 flex items-center gap-2">
-                                <i class="fa-solid fa-mask text-terracotta-500"></i> Mural & Folk Art
-                            </h4>
-                            <p class="text-xs text-stone-400 mt-1">Drawing inspiration from ancient wall paintings and ritual art forms.</p>
-                        </div>
-                        <div class="glass-card p-4 rounded-xl border-l-4 border-l-terracotta-500">
-                            <h4 class="font-serif font-bold text-stone-100 flex items-center gap-2">
-                                <i class="fa-solid fa-pencil text-terracotta-500"></i> Realism Sketches
-                            </h4>
-                            <p class="text-xs text-stone-400 mt-1">Intricate pencil portraiture detailing emotion and raw expression.</p>
-                        </div>
-                        <div class="glass-card p-4 rounded-xl border-l-4 border-l-ochre-500">
-                            <h4 class="font-serif font-bold text-stone-100 flex items-center gap-2">
-                                <i class="fa-solid fa-feather-pointed text-ochre-400"></i> Organic Mediums
-                            </h4>
-                            <p class="text-xs text-stone-400 mt-1">Incorporating natural pigments, charcoal, ink, and textured canvas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Collage Sourced From Internet Images -->
-                <div class="grid grid-cols-2 gap-4 relative">
-                    <div class="space-y-4">
-                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" 
-                             alt="Cultural Painting by Abhiram" 
-                             class="rounded-2xl border border-stone-800 object-cover h-64 w-full shadow-lg hover:brightness-110 transition-all">
-                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" 
-                             alt="Paint Brushes & Palette" 
-                             class="rounded-2xl border border-stone-800 object-cover h-48 w-full shadow-lg hover:brightness-110 transition-all">
-                    </div>
-                    <div class="space-y-4 pt-8">
-                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=600&q=80" 
-                             alt="Pencil Sketching Artwork" 
-                             class="rounded-2xl border border-stone-800 object-cover h-48 w-full shadow-lg hover:brightness-110 transition-all">
-                        <img src="https://images.unsplash.com/photo-1582561672321-2e63cb7801df?auto=format&fit=crop&w=600&q=80" 
-                             alt="Traditional Mural Art Detail" 
-                             class="rounded-2xl border border-stone-800 object-cover h-64 w-full shadow-lg hover:brightness-110 transition-all">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-xs uppercase tracking-widest text-ochre-400 font-cinzel font-semibold">Art Archive</h2>
-                    <h3 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100 mt-2">Masterworks & Creations</h3>
-                </div>
-
-                <!-- Filter Controls -->
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="gallery-filters">
-                    <button data-filter="all" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider bg-ochre-500 text-stone-950 transition-all">ALL WORKS</button>
-                    <button data-filter="cultural" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider glass-card text-stone-300 hover:text-ochre-400 transition-all">CULTURAL & MYTH</button>
-                    <button data-filter="painting" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider glass-card text-stone-300 hover:text-ochre-400 transition-all">PAINTINGS</button>
-                    <button data-filter="drawing" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider glass-card text-stone-300 hover:text-ochre-400 transition-all">DRAWINGS & SKETCHES</button>
-                </div>
-            </div>
-
-            <!-- Gallery Grid with Internet Images -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
-                
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item group relative rounded-2xl overflow-hidden glass-card border border-stone-800 cursor-pointer" data-category="cultural" onclick="openArtModal('The Kathakali Essence', 'Cultural & Myth', 'Acrylic & Gold Leaf on Canvas', 'A tribute to classical Indian dance forms, rendering intense facial expressions with vivid natural dyes.', 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80')">
-                    <div class="aspect-w-4 aspect-h-5 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="The Kathakali Essence" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 bg-stone-900/90 border-t border-stone-800">
-                        <span class="text-[10px] uppercase font-cinzel text-ochre-400 tracking-widest">Cultural & Myth</span>
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mt-1">The Kathakali Essence</h4>
-                        <p class="text-xs text-stone-400 mt-2 line-clamp-2">A tribute to classical traditional performance art with vivid expressions and golden ornaments.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item group relative rounded-2xl overflow-hidden glass-card border border-stone-800 cursor-pointer" data-category="drawing" onclick="openArtModal('The Village Elder', 'Drawings & Sketches', 'Graphite & Charcoal on Textured Paper', 'A soul-stirring realistic portrait highlighting age lines and wisdom carved by time.', 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1000&q=80')">
-                    <div class="aspect-w-4 aspect-h-5 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80" alt="The Village Elder" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 bg-stone-900/90 border-t border-stone-800">
-                        <span class="text-[10px] uppercase font-cinzel text-terracotta-500 tracking-widest">Drawings & Sketches</span>
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mt-1">The Village Elder</h4>
-                        <p class="text-xs text-stone-400 mt-2 line-clamp-2">Fine charcoal lines capturing the quiet dignity and depth of traditional rural life.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item group relative rounded-2xl overflow-hidden glass-card border border-stone-800 cursor-pointer" data-category="painting" onclick="openArtModal('Symphony of Earth', 'Paintings', 'Oil & Ochre Pigments', 'An abstract exploration of monsoon clay, river roots, and golden harvest hues.', 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1000&q=80')">
-                    <div class="aspect-w-4 aspect-h-5 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80" alt="Symphony of Earth" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 bg-stone-900/90 border-t border-stone-800">
-                        <span class="text-[10px] uppercase font-cinzel text-ochre-400 tracking-widest">Paintings</span>
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mt-1">Symphony of Earth</h4>
-                        <p class="text-xs text-stone-400 mt-2 line-clamp-2">Textured canvas artwork merging rich terracotta tones and spiritual symbolism.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item group relative rounded-2xl overflow-hidden glass-card border border-stone-800 cursor-pointer" data-category="cultural" onclick="openArtModal('Divine Lotus & Serpent', 'Cultural & Myth', 'Traditional Mural Style Acrylics', 'Inspired by ancient Kerala mural traditions depicting divine flora and folklore iconography.', 'https://images.unsplash.com/photo-1582561672321-2e63cb7801df?auto=format&fit=crop&w=1000&q=80')">
-                    <div class="aspect-w-4 aspect-h-5 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1582561672321-2e63cb7801df?auto=format&fit=crop&w=800&q=80" alt="Divine Lotus & Serpent" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 bg-stone-900/90 border-t border-stone-800">
-                        <span class="text-[10px] uppercase font-cinzel text-ochre-400 tracking-widest">Cultural & Myth</span>
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mt-1">Divine Lotus & Serpent</h4>
-                        <p class="text-xs text-stone-400 mt-2 line-clamp-2">Authentic mural colors using saffron, green, and deep black border lines.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item group relative rounded-2xl overflow-hidden glass-card border border-stone-800 cursor-pointer" data-category="drawing" onclick="openArtModal('Rhythm of Theyyam', 'Drawings & Sketches', 'Ink & Pen Line Art', 'Detailed line work celebrating ritualistic folk art performances and ornate headgear.', 'https://images.unsplash.com/photo-1578926375605-eaf7559b1458?auto=format&fit=crop&w=1000&q=80')">
-                    <div class="aspect-w-4 aspect-h-5 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?auto=format&fit=crop&w=800&q=80" alt="Rhythm of Theyyam" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 bg-stone-900/90 border-t border-stone-800">
-                        <span class="text-[10px] uppercase font-cinzel text-terracotta-500 tracking-widest">Drawings & Sketches</span>
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mt-1">Rhythm of Theyyam</h4>
-                        <p class="text-xs text-stone-400 mt-2 line-clamp-2">Intricate pen illustration capturing sacred folk deity headpieces and patterns.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item group relative rounded-2xl overflow-hidden glass-card border border-stone-800 cursor-pointer" data-category="painting" onclick="openArtModal('Monsoon Whispers', 'Paintings', 'Watercolor & Gouache', 'Fluid brushstrokes depicting traditional village architecture bathed in gentle rainfall.', 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80')">
-                    <div class="aspect-w-4 aspect-h-5 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="Monsoon Whispers" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 bg-stone-900/90 border-t border-stone-800">
-                        <span class="text-[10px] uppercase font-cinzel text-ochre-400 tracking-widest">Paintings</span>
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mt-1">Monsoon Whispers</h4>
-                        <p class="text-xs text-stone-400 mt-2 line-clamp-2">Atmospheric landscape rendered in soft hues and translucent water textures.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="art-styles" class="py-24 bg-stone-950 border-t border-stone-800 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-                <h2 class="text-xs uppercase tracking-widest text-ochre-400 font-cinzel font-semibold">Techniques & Specialties</h2>
-                <h3 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100">Artistic Expressions</h3>
-                <p class="text-stone-400 text-sm">Abhiram seamlessly moves between centuries-old traditional techniques and modern fine art mediums.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-2xl border border-stone-800 hover:border-ochre-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-xl bg-terracotta-500/20 flex items-center justify-center text-terracotta-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-paintbrush"></i>
-                    </div>
-                    <h4 class="text-2xl font-serif font-bold text-stone-100 mb-3">Mural & Folk Painting</h4>
-                    <p class="text-stone-400 text-sm leading-relaxed mb-4">
-                        Mastery over vibrant color palettes inspired by Indian temple murals, folk rituals, and traditional iconography using natural-feeling pigments.
-                    </p>
-                    <ul class="text-xs text-stone-500 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Terracotta & Ochre Tonality</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Precise Contour Outlines</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Mythological Narratives</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl border border-stone-800 hover:border-ochre-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-xl bg-ochre-500/20 flex items-center justify-center text-ochre-400 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-pencil"></i>
-                    </div>
-                    <h4 class="text-2xl font-serif font-bold text-stone-100 mb-3">Charcoal & Pencil Realism</h4>
-                    <p class="text-stone-400 text-sm leading-relaxed mb-4">
-                        High-contrast graphite and charcoal portraiture capturing intimate human emotions, traditional village characters, and fine textures.
-                    </p>
-                    <ul class="text-xs text-stone-500 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Hyper-detailed Shading</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Dramatic Chiaroscuro Lighting</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Expressive Human Anatomy</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl border border-stone-800 hover:border-ochre-500/50 transition-all group">
-                    <div class="w-14 h-14 rounded-xl bg-peacock-700/30 flex items-center justify-center text-peacock-700 text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-palette"></i>
-                    </div>
-                    <h4 class="text-2xl font-serif font-bold text-stone-100 mb-3">Contemporary Acrylic & Oil</h4>
-                    <p class="text-stone-400 text-sm leading-relaxed mb-4">
-                        Blending modern abstract elements with traditional motifs on large-format canvas for home, gallery exhibitions, and architectural spaces.
-                    </p>
-                    <ul class="text-xs text-stone-500 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Multi-layered Texture</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Metallic Leaf Highlights</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ochre-400"></i> Custom Commissioned Artworks</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="interactive-canvas" class="py-24 relative bg-stone-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
-                <span class="px-3 py-1 rounded-full bg-ochre-500/10 text-ochre-400 text-xs font-semibold uppercase tracking-wider border border-ochre-500/20">Interactive Experience</span>
-                <h3 class="text-3xl sm:text-4xl font-serif font-bold text-stone-100">Try Abhiram's Digital Palette</h3>
-                <p class="text-xs sm:text-sm text-stone-400">Draw, sketch, or test traditional cultural color palettes right here on screen!</p>
-            </div>
-
-            <div class="glass-card rounded-2xl p-4 sm:p-6 border border-stone-800 max-w-4xl mx-auto shadow-2xl">
-                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-4 border-b border-stone-800">
-                    <div class="flex items-center space-x-2">
-                        <span class="text-xs text-stone-400 font-cinzel mr-2 hidden sm:inline">Palette:</span>
-                        <button class="color-btn w-7 h-7 rounded-full border-2 border-stone-100 scale-110 shadow" style="background-color: #c85a32;" data-color="#c85a32" title="Terracotta Red"></button>
-                        <button class="color-btn w-7 h-7 rounded-full border-2 border-transparent hover:scale-105" style="background-color: #d99b26;" data-color="#d99b26" title="Ochre Gold"></button>
-                        <button class="color-btn w-7 h-7 rounded-full border-2 border-transparent hover:scale-105" style="background-color: #0d5c63;" data-color="#0d5c63" title="Peacock Blue"></button>
-                        <button class="color-btn w-7 h-7 rounded-full border-2 border-transparent hover:scale-105" style="background-color: #1c1917;" data-color="#1c1917" title="Charcoal"></button>
-                        <button class="color-btn w-7 h-7 rounded-full border-2 border-transparent hover:scale-105" style="background-color: #f5f5f4;" data-color="#f5f5f4" title="Chalk White"></button>
-                    </div>
-
-                    <div class="flex items-center space-x-3">
-                        <label for="brush-size" class="text-xs text-stone-400 font-cinzel">Size:</label>
-                        <input type="range" id="brush-size" min="2" max="30" value="6" class="w-24 accent-ochre-500 bg-stone-800 rounded">
-                    </div>
-
-                    <div class="flex items-center space-x-2">
-                        <button id="clear-canvas" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-medium transition-colors">
-                            <i class="fa-solid fa-rotate-left mr-1"></i> Clear
-                        </button>
-                        <button id="download-canvas" class="px-3 py-1.5 rounded-lg bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs font-medium transition-colors">
-                            <i class="fa-solid fa-download mr-1"></i> Save Sketch
-                        </button>
-                    </div>
-                </div>
-
-                <div class="relative bg-stone-950 rounded-xl overflow-hidden border border-stone-800 touch-none flex justify-center items-center">
-                    <canvas id="art-canvas" class="w-full h-80 sm:h-96 cursor-crosshair block"></canvas>
-                </div>
-                <div class="text-center mt-3 text-[11px] text-stone-500 italic">
-                    Tip: Draw on touchscreens or use your mouse to sketch motifs!
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 relative border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
-                <div class="lg:col-span-5 space-y-6">
-                    <div>
-                        <span class="text-xs uppercase tracking-widest text-ochre-400 font-cinzel font-semibold">Commissions & Exhibitions</span>
-                        <h3 class="text-3xl sm:text-5xl font-serif font-bold text-stone-100 mt-2">Bring Art to Your Space</h3>
-                    </div>
-                    
-                    <p class="text-stone-400 text-sm leading-relaxed">
-                        Interested in commissioning a personalized cultural mural, ordering a portrait drawing, or collaborating on gallery exhibitions? Feel free to reach out to <strong>Abhiram D Ajeesh</strong>.
-                    </p>
-
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-full bg-ochre-500/10 border border-ochre-500/30 flex items-center justify-center text-ochre-400 flex-shrink-0">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-xs uppercase text-stone-500 font-cinzel">Email Enquiries</h5>
-                                <p class="text-stone-200 text-sm font-medium">abhiram.d.ajeesh.art@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-full bg-terracotta-500/10 border border-terracotta-500/30 flex items-center justify-center text-terracotta-500 flex-shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-xs uppercase text-stone-500 font-cinzel">Studio Base</h5>
-                                <p class="text-stone-200 text-sm font-medium">Kerala, India (Open for worldwide shipping)</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-10 h-10 rounded-full bg-peacock-700/30 border border-peacock-700/50 flex items-center justify-center text-peacock-700 flex-shrink-0">
-                                <i class="fa-solid fa-icons"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-xs uppercase text-stone-500 font-cinzel">Social Handles</h5>
-                                <div class="flex space-x-3 mt-1">
-                                    <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-ochre-500 hover:text-stone-950 flex items-center justify-center text-stone-300 text-xs transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-ochre-500 hover:text-stone-950 flex items-center justify-center text-stone-300 text-xs transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-ochre-500 hover:text-stone-950 flex items-center justify-center text-stone-300 text-xs transition-colors"><i class="fa-brands fa-behance"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7">
-                    <div class="glass-card p-8 sm:p-10 rounded-2xl border border-stone-800 shadow-xl">
-                        <h4 class="text-xl font-serif font-bold text-stone-100 mb-6">Send a Direct Message</h4>
-                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label class="block text-xs uppercase font-cinzel text-stone-400 mb-2">Your Name</label>
-                                    <input type="text" required class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-ochre-500 text-sm" placeholder="e.g. Anjali Sharma">
-                                </div>
-                                <div>
-                                    <label class="block text-xs uppercase font-cinzel text-stone-400 mb-2">Email Address</label>
-                                    <input type="email" required class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-ochre-500 text-sm" placeholder="e.g. name@example.com">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs uppercase font-cinzel text-stone-400 mb-2">Interested Art Category</label>
-                                <select class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-ochre-500 text-sm">
-                                    <option value="custom-mural">Custom Cultural Mural Painting</option>
-                                    <option value="portrait-drawing">Pencil/Charcoal Portrait Drawing</option>
-                                    <option value="canvas-painting">Canvas Painting Purchase</option>
-                                    <option value="exhibition">Exhibition / Gallery Inquiry</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs uppercase font-cinzel text-stone-400 mb-2">Message & Details</label>
-                                <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-100 focus:outline-none focus:border-ochre-500 text-sm" placeholder="Describe your vision, required dimensions, or inquiry details..."></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-terracotta-600 to-ochre-600 hover:opacity-90 text-white font-medium shadow-lg transition-all text-sm uppercase tracking-wider font-cinzel">
-                                Send Message
-                            </button>
-                        </form>
-                        <div id="form-message" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs text-center">
-                            Thank you! Your message has been received. Abhiram will connect with you soon.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <div id="art-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-3xl w-full rounded-2xl overflow-hidden border border-stone-700 shadow-2xl relative max-h-[90vh] flex flex-col md:flex-row">
-            <button onclick="closeArtModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-900/80 text-stone-300 hover:text-white flex items-center justify-center">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            
-            <div class="md:w-1/2 bg-stone-950 flex items-center justify-center p-4">
-                <img id="modal-img" src="" alt="Artwork detail" class="max-h-[60vh] md:max-h-[80vh] w-auto object-contain rounded-lg">
-            </div>
-
-            <div class="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between space-y-4 overflow-y-auto">
-                <div>
-                    <span id="modal-category" class="text-[10px] uppercase font-cinzel text-ochre-400 tracking-widest"></span>
-                    <h3 id="modal-title" class="text-2xl font-serif font-bold text-stone-100 mt-1"></h3>
-                    <p id="modal-medium" class="text-xs text-stone-400 italic mt-1"></p>
-                    <div class="w-12 h-0.5 bg-terracotta-500 my-4"></div>
-                    <p id="modal-desc" class="text-stone-300 text-sm leading-relaxed"></p>
-                </div>
-
-                <div class="pt-4 border-t border-stone-800 flex items-center justify-between">
-                    <span class="text-xs text-stone-400">Original Artwork by Abhiram D Ajeesh</span>
-                    <a href="#contact" onclick="closeArtModal()" class="px-4 py-2 rounded-lg bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs font-medium transition-colors">Inquire Artwork</a>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <footer class="py-8 bg-stone-950 border-t border-stone-900 text-center text-stone-500 text-xs">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; 2026 Abhiram D Ajeesh. All rights reserved. Creative Visual Art.</p>
-            <div class="flex space-x-6">
-                <a href="#hero" class="hover:text-ochre-400 transition-colors">Back to Top</a>
-                <a href="#gallery" class="hover:text-ochre-400 transition-colors">Artworks</a>
-            </div>
-        </div>
-    </footer>
+    <section class="wrap" id="gallery">
+      <div class="section-head">
+        <div><div class="eyebrow">Selected work</div><h2>A few things I've made.</h2></div>
+        <p class="section-note">A selection of drawing, painting, and creative explorations.</p>
+      </div>
+      <div class="gallery">
+        <article class="art-card"><span class="art-number">ARTWORK</span><div class="art-info"><h3>Portrait Study</h3><p>Pencil drawing · 2026</p></div></article>
+        <article class="art-card"><span class="art-number">ARTWORK</span><div class="art-info"><h3>Nature in Colour</h3><p>Watercolour · 2026</p></div></article>
+        <article class="art-card"><span class="art-number">ARTWORK</span><div class="art-info"><h3>Little Daydream</h3><p>Creative sketch · 2026</p></div></article>
+        <article class="art-card"><span class="art-number">ARTWORK</span><div class="art-info"><h3>Quiet Landscape</h3><p>Painting · 2026</p></div></article>
+        <article class="art-card"><span class="art-number">ARTWORK</span><div class="art-info"><h3>Colour Experiments</h3><p>Mixed media · 2026</p></div></article>
+        <article class="art-card"><span class="art-number">ARTWORK</span><div class="art-info"><h3>From the Sketchbook</h3><p>Pencil and ink · 2026</p></div></article>
+      </div>
+    </section>
 
-    <script>
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+    <section class="wrap about" id="about">
+      <div class="about-copy">
+        <div class="eyebrow">Meet the artist</div>
+        <h2>Every piece has a story.</h2>
+        <p>I'm Abhiram, an artist who enjoys exploring drawing, painting, colour, and new ideas. For me, art is a way to notice the little details and express what's hard to put into words.</p>
+        <p>This portfolio is a collection of my favourite pieces and the creative experiments I'm proud to share.</p>
+        <div class="tags"><span class="tag">Pencil sketching</span><span class="tag">Painting</span><span class="tag">Portraits</span><span class="tag">Creative art</span></div>
+      </div>
+    </section>
+  </main>
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-ochre-500', 'text-stone-950');
-                    b.classList.add('glass-card', 'text-stone-300');
-                });
-                btn.classList.remove('glass-card', 'text-stone-300');
-                btn.classList.add('bg-ochre-500', 'text-stone-950');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        function openArtModal(title, category, medium, desc, imgUrl) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-category').innerText = category;
-            document.getElementById('modal-medium').innerText = medium;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-img').src = imgUrl;
-            document.getElementById('art-modal').classList.remove('hidden');
-        }
-
-        function closeArtModal() {
-            document.getElementById('art-modal').classList.add('hidden');
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const msgBox = document.getElementById('form-message');
-            msgBox.classList.remove('hidden');
-            e.target.reset();
-            setTimeout(() => {
-                msgBox.classList.add('hidden');
-            }, 6000);
-        }
-
-        const canvas = document.getElementById('art-canvas');
-        const ctx = canvas.getContext('2d');
-        let isDrawing = false;
-        let currentColor = '#c85a32';
-        let currentBrushSize = 6;
-
-        function resizeCanvas() {
-            const rect = canvas.parentElement.getBoundingClientRect();
-            canvas.width = rect.width;
-            canvas.height = rect.height;
-            
-            ctx.fillStyle = '#0c0a09';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-
-        window.addEventListener('load', resizeCanvas);
-        window.addEventListener('resize', resizeCanvas);
-
-        document.querySelectorAll('.color-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                document.querySelectorAll('.color-btn').forEach(b => {
-                    b.classList.remove('scale-110', 'border-stone-100');
-                    b.classList.add('border-transparent');
-                });
-                btn.classList.add('scale-110', 'border-stone-100');
-                btn.classList.remove('border-transparent');
-                currentColor = btn.getAttribute('data-color');
-            });
-        });
-
-        document.getElementById('brush-size').addEventListener('input', (e) => {
-            currentBrushSize = e.target.value;
-        });
-
-        document.getElementById('clear-canvas').addEventListener('click', () => {
-            ctx.fillStyle = '#0c0a09';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        });
-
-        document.getElementById('download-canvas').addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.download = 'Abhiram_Art_Canvas.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        });
-
-        function startDrawing(e) {
-            isDrawing = true;
-            draw(e);
-        }
-
-        function stopDrawing() {
-            isDrawing = false;
-            ctx.beginPath();
-        }
-
-        function draw(e) {
-            if (!isDrawing) return;
-
-            const rect = canvas.getBoundingClientRect();
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-            const x = clientX - rect.left;
-            const y = clientY - rect.top;
-
-            ctx.lineWidth = currentBrushSize;
-            ctx.lineCap = 'round';
-            ctx.strokeStyle = currentColor;
-
-            ctx.lineTo(x, y);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-        }
-
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('mouseup', stopDrawing);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseleave', stopDrawing);
-
-        canvas.addEventListener('touchstart', startDrawing);
-        canvas.addEventListener('touchend', stopDrawing);
-        canvas.addEventListener('touchmove', draw);
-    </script>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Abhiram · Art Portfolio</span>
+      <span>Copyright © 2026 @ Developer Darshan</span>
+    </div>
+  </footer>
 </body>
 </html>
